@@ -1,0 +1,120 @@
+/* Úvodní sekce - desktop */
+.intro {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--intro-color);
+}
+
+.intro-image {
+  flex: 1;
+  background-image: url('../img/uvodni_foto.jpg');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(80%);
+}
+
+.intro-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-top: 6rem;
+  padding: 0 9%;
+  justify-content: center;
+  color: var(--primary-color);
+  animation: slideInText 1.5s ease forwards;
+}
+
+.intro h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  animation: slideIn 1.2s ease forwards;
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.intro h1::after {
+  content: '';
+  display: block;
+  width: 6rem;
+  height: 4px;
+  background-color: #e37598;
+  margin-top: 1rem;
+  animation: expandUnderline 1.5s ease-in-out forwards;
+}
+
+.intro-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-top: 0.5rem;
+  opacity: 0;
+  animation: fadeInText 1.6s ease forwards;
+  animation-delay: 0.8s;
+}
+
+/* Animace */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInText {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1440px) {
+  .intro h1 {
+    font-size: 1.5rem;
+  }
+  
+  .intro-text p {
+    font-size: 1rem;
+    line-height: 1.4;
+    text-align: left;
+  }
+}
+
+@media (max-width: 830px) {
+  .intro {
+    flex-direction: column;
+    height: 100vh;
+    background-color: transparent;
+  }
+
+  .intro-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: brightness(50%);
+    z-index: -1;
+  }
+
+  .intro-text {
+    background-color: transparent;
+    padding: 10%;
+    color: white;
+  }
+
+  .intro h1 {
+    font-size: 1.5rem;
+  }
+}

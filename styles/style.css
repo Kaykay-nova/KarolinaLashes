@@ -1,0 +1,155 @@
+@import url('header.css');
+@import url('main-intro.css');
+@import url('services.css');
+@import url('pricing.css');
+@import url('contact.css');
+@import url('footer.css');
+@import url('privacy-modal.css');
+
+/* Import fontů */
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600;800&display=swap');
+
+.playwrite-gb-s-header {
+  font-family: "Playwrite GB S", cursive;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.montserrat-main-font {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* Definice barev a fontů*/
+:root {
+  --primary-color: #FFF5EA;
+  --secondary-color: #4A4A4A;
+  --header-color: #8C1D40;
+  --footer-color: #B17777;
+  --hover-links: #cc2257;
+  --intro-color: #644d4d;
+  --header-font: "Playwrite GB S", sans-serif;
+}
+
+/* Základní reset a styly */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h2 {
+  font-family: var(--header-font);
+  font-size: 2em;
+  color: var(--header-color);
+  border-bottom: 2px solid var(--header-color);
+  display: inline-block;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem; 
+  text-align: left;
+}
+
+p {
+  font-size: 1.2em;
+  margin: 1rem 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--hover-links);
+}
+
+::selection {
+  background: #e37598;
+}
+
+section {
+  scroll-margin-top: 6rem;
+}
+
+/* Animace prvků */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgb(61, 61, 61);
+  padding: 15px 20px;
+  border-radius: 50px;
+  margin: 4% 0;
+  font-weight: 600;
+  width: 150px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  background: linear-gradient(161deg, rgb(206, 190, 174) 0%, rgb(231, 209, 232) 90%);
+  transition: 0.5s;
+}
+
+.btn:hover {
+  color: white;
+  width: 180px;
+  background: var(--hover-links);
+  scale: 1.1;
+}
+
+/* Responzivní úpravy */
+@media (max-width: 990px) {
+  h2 {
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  p {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .btn {
+    width: 120px;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.6em;
+  }
+
+  p {
+    font-size: 0.9em;
+  }
+
+  .btn {
+    width: 100px;
+    padding: 8px 12px;
+  }
+}

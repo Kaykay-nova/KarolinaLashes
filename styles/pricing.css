@@ -1,0 +1,88 @@
+/* Ceník */
+.pricing {
+  background-color: #E2D1C0;
+  position: relative;
+}
+
+.pricing-content {
+  margin: 10% auto;
+  max-width: 800px;
+  padding: 12% 0;
+}
+
+.pricing table {
+  width: 600px;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.pricing table,
+.pricing th,
+.pricing td {
+  border: 7px solid #E2D1C0;
+  padding: 15px;
+  background-color: #f4f4f4;
+}
+
+.btn-circle {
+  cursor: pointer;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  padding: 3%;
+  background: var(--footer-color);
+  display: flex;
+  align-items: center;
+  transition: transform 0.4s, background-color 0.4s;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-circle:hover {
+  transform: scale(1.1);
+  background-color: #d29696;
+}
+
+.btn-circle i {
+  margin: 5px;
+}
+
+/* Responzivní úpravy */
+
+@media (max-width: 990px) {
+  .pricing-content {
+    padding: 20% 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing table {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .btn-circle {
+    width: 120px;
+    height: 120px;
+    font-size: 0.8rem;
+    bottom: 8%;
+    right: 8%;
+  }
+}
+
+@media (max-width: 400px) {
+  .pricing-content {
+    padding: 45% 5%;
+  }
+}
